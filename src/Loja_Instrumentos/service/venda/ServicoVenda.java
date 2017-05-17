@@ -16,7 +16,7 @@ public class ServicoVenda {
     public static void fazerReserva(ItemProduto prod)
             throws InstrumentoException, DataSourceException {
         
-        //Chama o validador para verificar o reserva
+        //Chama o validador para verificar a reserva
         ValidadorVenda.validar(prod);
 
         try {
