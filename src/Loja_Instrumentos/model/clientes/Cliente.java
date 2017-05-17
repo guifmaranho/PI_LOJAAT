@@ -5,27 +5,35 @@ import java.util.Date;
 //Classe de negócio de cliente
 public class Cliente {
     // Atributos
-    private int id;
+    private Integer id;
     private Date dataDeCadastro;
     private String nome;
-    private int cspfOuCnpj;
+    private Integer cpfOuCnpj;
+    private Date nascimento;
+    private String genero;
+    private String estadoCivil;
     private String endereco;
-    private int numeroEnd;
+    private Integer numeroEnd;
     private String bairro;
     private String complemento;
-    private int cep;
-    // contato
-    private int telefone;
-    private int telefoneContato;
-    private int Celular;
-    private int CelularContato;
-    private String email;
+    private Integer cep;
+    private Integer telefone;
+    private Integer Celular;
+    private String Email;
 
-    public int getId() {
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -45,12 +53,36 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public int getCpfOuCnpj() {
+    public Integer getCpfOuCnpj() {
         return cpfOuCnpj;
     }
 
-    public void setCpfOuCnpj(int cpfOuCnpj) {
+    public void setCpfOuCnpj(Integer cpfOuCnpj) {
         this.cpfOuCnpj = cpfOuCnpj;
+    }
+
+    public Date getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
     }
 
     public String getEndereco() {
@@ -61,11 +93,11 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public int getNumeroEnd() {
+    public Integer getNumeroEnd() {
         return numeroEnd;
     }
 
-    public void setNumeroEnd(int numeroEnd) {
+    public void setNumeroEnd(Integer numeroEnd) {
         this.numeroEnd = numeroEnd;
     }
 
@@ -85,54 +117,30 @@ public class Cliente {
         this.complemento = complemento;
     }
 
-    public int getCep() {
+    public Integer getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(Integer cep) {
         this.cep = cep;
     }
 
-    public int getTelefone() {
+    public Integer getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(Integer telefone) {
         this.telefone = telefone;
     }
 
-    public int getTelefoneContato() {
-        return telefoneContato;
-    }
-
-    public void setTelefoneContato(int telefoneContato) {
-        this.telefoneContato = telefoneContato;
-    }
-
-    public int getCelular() {
+    public Integer getCelular() {
         return Celular;
     }
 
-    public void setCelular(int Celular) {
+    public void setCelular(Integer Celular) {
         this.Celular = Celular;
     }
 
-    public int getCelularContato() {
-        return CelularContato;
-    }
-
-    public void setCelularContato(int CelularContato) {
-        this.CelularContato = CelularContato;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    
+   
 }
-
-
-/*teste de codigo*/

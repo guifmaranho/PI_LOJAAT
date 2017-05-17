@@ -6,49 +6,53 @@ import Loja_Instrumentos.model.clientes.Cliente;
 //Validador de dados do cliente
 public class ValidadorCliente {
 
-    public void validar(Cliente cliente) throws ClienteException {
+    public static void validar(Cliente cliente) throws ClienteException {
         //Realização de validações de negócio
         if (cliente == null) {
             throw new ClienteException("Não foi informado um cliente");
         }
-        if (Cliente.getNome() == null || "".equals(Cliente.getNome())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+        if (cliente.getNome() == null || "".equals(cliente.getNome())) {
+            throw new ClienteException("É necessário informar "
+                    + "um nome de cliente");
+
         }
-        if (Cliente.getCpfOuCnpj() == 0 || "".equals(Cliente.getCpfOuCnpj())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+
+        if (cliente.getCpfOuCnpj() == null || "".equals(cliente.getCpfOuCnpj())) {
+            throw new ClienteException("É necessário informar "
+                    + "o CPF/CNPJ do cliente");
+
         }
-        if (Cliente.getEndereco() == null || "".equals(Cliente.getEndereco())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+
+        if (cliente.getNascimento() == null) {
+            throw new ClienteException("É necessário informar um "
+                    + "valor de idade válido");
         }
-        if (Cliente.getNumeroEnd() == 0 || "".equals(Cliente.getNumeroEnd())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+        if (cliente.getGenero() == null || "".equals(cliente.getGenero())
+                || (!cliente.getGenero().equals("Masculino"))
+                && !cliente.getGenero().equals("Feminino")) {
+            throw new ClienteException("É necessário informar o "
+                    + "gênero do cliente");
         }
-        if (Cliente.getBairro() == null || "".equals(Cliente.getBairro())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+        if (cliente.getEstadoCivil() == null || "".equals(cliente.getEstadoCivil())
+                || (!cliente.getGenero().equals("Solteiro(a)"))
+                && !cliente.getGenero().equals("Casado(a)")
+                && !cliente.getGenero().equals("Viuvo(a)")
+                && !cliente.getGenero().equals("Divorciado(a)")) {
+            throw new ClienteException("É necessário informar o "
+                    + "estado civil do cliente");
         }
-        if (Cliente.getComplemento() == null || "".equals(Cliente.getComplemento())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+        if (cliente.getCep() == null) {
+            throw new ClienteException("Não foi informado o CEP do cliente");
         }
-        if (Cliente.getCep() == 0 || "".equals(Cliente.getCep())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+        if (cliente.getTelefone() == null) {
+            throw new ClienteException("Não foi informado o contato do cliente");
         }
-        if (Cliente.getTelefone() == 0 || "".equals(Cliente.getTelefone())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+        if (cliente.getCelular() == null) {
+            throw new ClienteException("Não foi informado o celular do cliente");
         }
-        if (Cliente.getTelefoneContato() == 0 || "".equals(Cliente.getTelefoneContato())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
+        if (cliente.getEmail() == null) {
+            throw new ClienteException("Não foi informado o email do cliente");
         }
-        if (Cliente.getCelular() == 0 || "".equals(Cliente.getCelular())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
-        }
-        if (Cliente.getCelular() == 0 || "".equals(Cliente.getCelular())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
-        }
-        if (Cliente.getCelularContato() == 0 || "".equals(Cliente.getCelularContato())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
-        }
-        if (Cliente.getEmail() == null || "".equals(Cliente.getEmail())) {
-            throw new ClienteException("É necessário informar um nome de cliente");
-        }
+
     }
 }

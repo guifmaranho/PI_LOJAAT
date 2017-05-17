@@ -1,13 +1,11 @@
 package Loja_Instrumentos.service.venda;
 
 import Loja_Instrumentos.exceptions.DataSourceException;
-import Loja_Instrumentos.exceptions.ReservaException;
+import Loja_Instrumentos.exceptions.InstrumentoException;
 import Loja_Instrumentos.mock.MockVenda;
-import Loja_Instrumentos.model.produto.Instrumentos;
-import Loja_Instrumentos.model.venda.ItemProduto;
-import Loja_Instrumentos.model.venda.Produto;
+import Loja_Instrumentos.model.produto.Produto;
 import Loja_Instrumentos.model.validador.venda.ValidadorVenda;
-import Loja_Instrumentos.service.produtos.ServicoProduto;
+import Loja_Instrumentos.model.venda.ItemProduto;
 import java.util.Date;
 import java.util.List;
 
@@ -15,11 +13,11 @@ import java.util.List;
 public class ServicoVenda {
 
     //Insere um reserva na fonte de dados
-    public static void fazerReserva(Produto prod)
-            throws ReservaException, DataSourceException {
-
+    public static void fazerReserva(ItemProduto prod)
+            throws InstrumentoException, DataSourceException {
+        
         //Chama o validador para verificar o reserva
-        ValidadorReserva.validar(prod);
+        ValidadorVenda.validar(prod);
 
         try {
             //Marca os quartos da reserva como alugados

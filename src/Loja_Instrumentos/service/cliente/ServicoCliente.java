@@ -1,11 +1,13 @@
 package Loja_Instrumentos.service.cliente;
 
 import Loja_Instrumentos.exceptions.ClienteException;
-import Loja_Instrumentos.mock.MockCliente;
 import Loja_Instrumentos.exceptions.DataSourceException;
+import Loja_Instrumentos.mock.MockCliente;
 import Loja_Instrumentos.model.clientes.Cliente;
 import Loja_Instrumentos.model.validador.cliente.ValidadorCliente;
 import java.util.List;
+
+
 
 //Classe de serviço de cliente
 public class ServicoCliente {

@@ -1,13 +1,13 @@
 package Loja_Instrumentos.model.venda;
 
-import Loja_Instrumentos.model.quartos.Quarto;
 
-//Classe de negócio de itens de reserva (quarto + quantidade de pessoas)
+
+//Classe de negócio de itens de reserva
 public class ItemProduto {
     //Atributos de negócio
     private Integer id;
-    private Quarto quartoAlugado;
-    private Integer quantidadePessoas;
+    private ProdutoVenda itemaVenda;
+    private Integer quantidadeItens;
 
     //Métodos de acesso
     public Integer getId() {
@@ -18,19 +18,19 @@ public class ItemProduto {
         this.id = id;
     }
 
-    public Quarto getQuartoAlugado() {
-        return quartoAlugado;
+    public ProdutoVenda getItemaVenda() {
+        return itemaVenda;
     }
 
-    public void setQuartoAlugado(Quarto quartoAlugado) {
-        this.quartoAlugado = quartoAlugado;
+    public void setItemaVenda(ProdutoVenda itemaVenda) {
+        this.itemaVenda = itemaVenda;
     }
 
-    public Integer getQuantidadePessoas() {
-        return quantidadePessoas;
+    public Integer getQuantidadeItens() {
+        return quantidadeItens;
     }
 
-    public void setQuantidadePessoas(Integer quantidadePessoas) {
-        this.quantidadePessoas = quantidadePessoas;
+    public void setQuantidadeItens(Integer quantidadeItens) {
+        this.quantidadeItens = quantidadeItens;
     }   
 }

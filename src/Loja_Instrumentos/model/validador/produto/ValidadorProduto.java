@@ -1,34 +1,43 @@
 package Loja_Instrumentos.model.validador.produto;
 
-import Loja_Instrumentos.exceptions.QuartoException;
-import Loja_Instrumentos.model.quartos.Quarto;
+import Loja_Instrumentos.exceptions.InstrumentoException;
+import Loja_Instrumentos.model.produto.Produto;
 
 //Validador de Quarto
 public class ValidadorProduto {
-    public static  void validar(Quarto quarto) throws QuartoException {
+
+    public static void validar(Produto produto) throws InstrumentoException {
         //Realização de validações de negócio
-        if (quarto == null) {
-            throw new QuartoException("Não foi informado um quarto");
+        if (produto == null) {
+            throw new InstrumentoException("Não foi informado um produto");
         }
-        if (quarto.getNumero() == null || quarto.getNumero() <= 0) {
-            throw new QuartoException("O número do quarto precisa ser "
-                + "um valor positivo e maior que zero.");
+        if (produto.getNome() == null) {
+            throw new InstrumentoException("É necessário informar "
+                    + "um nome do produto");
         }
-        if (quarto.getAndar() == null || quarto.getAndar() <= 0) {
-            throw new QuartoException("O número do andar precisa ser "
-                + "um valor positivo e maior que zero.");
+
+        if (produto.getTipo() == null) {
+            throw new InstrumentoException("É necessário informar "
+                    + "o tipo de produto");
         }
-        if (quarto.getTipo() == null || "".equals(quarto.getTipo())
-                || (!quarto.getTipo().equals("Simples"))
-                && !quarto.getTipo().equals("Luxo")) {
-            throw new QuartoException("É necessário informar o "
-                    + "tipo do quarto");
+        if (produto.getMarca() == null) {
+            throw new InstrumentoException("É necessário informar "
+                    + "a marca do produto");
         }
-        if (quarto.getSituacao()== null || "".equals(quarto.getSituacao())
-                || (!quarto.getSituacao().equals("Vago"))
-                && !quarto.getSituacao().equals("Alugado")) {
-            throw new QuartoException("É necessário informar a "
-                    + "situação do quarto");
+
+        if (produto.getPreco() == null) {
+            throw new InstrumentoException("É necessário informar "
+                    + "o preço do produto");
         }
+        if (produto.getTipo() == null || "".equals(produto.getTipo())
+                || (!produto.getTipo().equals("Cordas"))
+                && !produto.getTipo().equals("Percursão")
+                && !produto.getTipo().equals("Teclas")
+                && !produto.getTipo().equals("Sopro")
+                && !produto.getTipo().equals("Outros")) {
+            throw new InstrumentoException("É necessário informar o "
+                    + "tipo do produto");
+        }
+
     }
 }
